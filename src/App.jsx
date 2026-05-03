@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import { useAuth } from "./context/AuthContext"
+import {useNavigate} from "react-router-dom"
+import {supabase} from "./client"
 
 
 
@@ -20,11 +22,17 @@ function App() {
       element: <Login/>
     }
   ]);
+  const navigate =useNavigate()
+  const handleLogout = async() => {
+    await supabase.auth.signOut()
+    navigate("/login")
+  }
 
   return (
     <>
 
       {user? <h1>hello {user.email}</h1>:<h1>NO LOGIN</h1>}
+      {user? <button onClick={handleLogout}>Log out</button>:<p></p>}
       {element}
     </>
   )
