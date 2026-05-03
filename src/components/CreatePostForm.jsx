@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { supabase } from '../client';
-const CreatePost = () => {
+const CreatePostForm = () => {
     const [post, setPost] = useState({ title: "", content: "", image_url: "" })
     const handleChange = (event) => {
         const { name, value } = event.target
@@ -43,4 +43,4 @@ const CreatePost = () => {
     )
 }
 
-export default CreatePost
+export default CreatePostForm
