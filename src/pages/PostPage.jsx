@@ -45,7 +45,7 @@ const PostPage = () => {
 
     return (
         <div className="view-post">
-            <h1>Title: {post.title}</h1>
+            <h1>{post.title}</h1>
             <h3>Content: {post.content}</h3>
             <img src={post.image_url} alt={post.title} />
             <button onClick={updateUpvotes}>{post.upvotes} Likes 👍</button>
