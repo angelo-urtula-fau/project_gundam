@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import PostPage from "./pages/PostPage"
+import EditPost from "./pages/EditPost"
 import { useAuth } from "./context/AuthContext"
-import {useNavigate} from "react-router-dom"
-import {supabase} from "./client"
+import { useNavigate } from "react-router-dom"
+import { supabase } from "./client"
 
 
 
@@ -20,15 +21,19 @@ function App() {
     },
     {
       path: "/login",
-      element: <Login/>
+      element: <Login />
     },
     {
       path: "/view/:id",
-      element: <PostPage/>
+      element: <PostPage />
+    },
+    {
+      path: "/edit/:id",
+      element: <EditPost />
     }
   ]);
-  const navigate =useNavigate()
-  const handleLogout = async() => {
+  const navigate = useNavigate()
+  const handleLogout = async () => {
     await supabase.auth.signOut()
     navigate("/login")
   }
@@ -36,8 +41,8 @@ function App() {
   return (
     <>
 
-      {user? <h1>hello {user.email}</h1>:<h1>NO LOGIN</h1>}
-      {user? <button onClick={handleLogout}>Log out</button>:<p></p>}
+      {user ? <h1>hello {user.email}</h1> : <h1>NO LOGIN</h1>}
+      {user ? <button onClick={handleLogout}>Log out</button> : <p></p>}
       {element}
     </>
   )
