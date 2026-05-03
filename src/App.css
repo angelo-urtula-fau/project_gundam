@@ -182,3 +182,29 @@
     border-right-color: var(--border);
   }
 }
+
+.post-link {
+  text-decoration: none;     
+  color: inherit;            
+  display: block;            
+}
+
+.post-link:hover {
+  transform: translateY(-2px);
+  transition: 0.15s ease;
+}
+
+
+.PostCard {
+  background: rgb(36, 34, 34);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  cursor: pointer;
+}
+
+.PostCard:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../client'
 import PostCard from '../components/PostCard'
 import CreatePostForm from '../components/CreatePostForm'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     const [posts, setPosts] = useState([])
@@ -49,14 +50,14 @@ const Home = () => {
                     })
 
                     .map((post) => (
-                        <PostCard
-                            key={post.id}
-                            id={post.id}
-                            title={post.title}
-                            time={post.created_at}
-                            upvotes={post.upvotes}
+                        <Link key={post.id} to={'view/' + post.id} className="post-link">
+                            <PostCard
+                                id={post.id}
+                                title={post.title}
+                                time={post.created_at}
+                                upvotes={post.upvotes}
 
-                        />
+                            /></Link>
                     ))) : (<h2>'No posts yet'</h2>)
             }
         </div>
