@@ -22,7 +22,8 @@ const SummaryCard = ({ post, comments }) => {
                         role: "user",
                         content: `Summarize this Music Recommedation post. It includes
                             the name of the track or album "${post.title}", the content from the posting user "${post.content}",
-                            an image URL "${post.image_url}", the amount of upvotes "${post.upvotes}", and a list of the comments "${commentsText}". 
+                            an image URL "${post.image_url}", the amount of upvotes "${post.upvotes}", and a list of the comments "${commentsText}".
+                            Please also comment on the image provided. 
                         Respond ONLY in JSON format: {"summary": "string"}`,
                     }
                 ]
