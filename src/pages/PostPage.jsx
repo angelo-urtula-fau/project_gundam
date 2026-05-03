@@ -25,7 +25,7 @@ const PostPage = () => {
             <h1>Title: {post.title}</h1>
             <h3>Content: {post.content}</h3>
             <h3>Image_url: {post.image_url}</h3>
-            <Link to={'/edit' + post.id} state={{ title: post.title, content: post.content, image_url: post.image_url }}>Edit Your Post</Link>
+            <Link to={'/edit/' + post.id} state={{ title: post.title, content: post.content, image_url: post.image_url }}>Edit Your Post</Link>
         </div>
     )
 }
