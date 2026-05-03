@@ -4,12 +4,14 @@ import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import CommentBox from '../components/CommentBox'
 import { useAuth } from '../context/AuthContext'
+import SummaryCard from '../components/SummaryCard'
 
 const PostPage = () => {
     const { user } = useAuth()
     const { id } = useParams()
     const [post, setPost] = useState({})
     const [comments, setComments] = useState([])
+
 
     const fetchPost = async () => {
         const { data } = await supabase
@@ -63,6 +65,7 @@ const PostPage = () => {
                 post_id={id}
                 onCommentAdded={fetchComments}
             />) : (null)}
+            <SummaryCard post={post} comments={comments} />
         </div>
     )
 }
