@@ -6,6 +6,7 @@ import CreatePostForm from '../components/CreatePostForm'
 const Home = () => {
     const [posts, setPosts] = useState([])
     const [sortBy, setSortBy] = useState("time")
+    const [searching, setSearching] = useState("")
 
     const fetchPosts = async () => {
         const { data, error } = await supabase
@@ -22,12 +23,24 @@ const Home = () => {
 
     return (
         <div className="Home">
+            <input
+                type="text"
+                placeholder="Search 🔍..."
+                value={searching}
+                onChange={(e) => setSearching(e.target.value)}
+                className="search-bar"
+            />
+
+            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                <option value="time">Newest</option>
+                <option value="upvotes">Most Upvoted</option>
+            </select>
             <CreatePostForm />
-            <button onClick={() => setSortBy(sortBy === "time" ? "upvotes" : "time")}>
-                Sort by: {sortBy === "time" ? "Upvotes" : "Newest"}
-            </button>
+
             {posts && posts.length > 0 ? (
                 [...posts]
+                    .filter((post) =>
+                        post.title.toLowerCase().includes(searching.toLowerCase()))
                     .sort((a, b) => {
                         if (sortBy === "time") {
                             return new Date(b.created_at) - new Date(a.created_at)
