@@ -6,6 +6,8 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import PostPage from "./pages/PostPage"
 import EditPost from "./pages/EditPost"
+import SignUp from './pages/SignUp'
+import ResetPassword from './pages/ResetPassword';
 import { useAuth } from "./context/AuthContext"
 import { useNavigate } from "react-router-dom"
 import { supabase } from "./client"
@@ -30,6 +32,14 @@ function App() {
     {
       path: "/edit/:id",
       element: <EditPost />
+    },
+    {
+      path: "/signup",
+      element: <SignUp />
+    },
+    {
+      path: "/reset-password",
+      element: <ResetPassword />
     }
   ]);
   const navigate = useNavigate()
