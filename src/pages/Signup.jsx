@@ -14,9 +14,9 @@ const SignUp = () => {
             password
         })
         if (error) {
-            console.error("Error signing up:", error)
+            alert("Error signing up:", error)
         } else {
-            console.log("User signed up:", data)
+            alert("User signed up:", data)
             navigate("/login")
         }
     }
