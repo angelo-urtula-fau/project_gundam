@@ -15,7 +15,7 @@ const EditPost = ({ data }) => {
             .from("posts")
             .update({ title: post.title, content: post.content, image_url: post.image_url })
             .eq("id", id)
-        window.location = "/";
+        window.location = "/view/" + id;
     }
 
     const deletePost = async (event) => {
