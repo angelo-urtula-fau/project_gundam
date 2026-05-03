@@ -4,7 +4,7 @@ Submitted by: Angelo Urtula
 
 This web app: Neon Jazzscapes is a place where fellow enjoyers of chill music, jazz, and all of jazz's iterations can come together and share albums or tracks that they want others to check out. Without signing in, users can check out the collection of recommendations that have already been posted on the app by those with an account. All users can upvote recommendations as much as they would like, as well. The list of recommendations can be sorted by most recent created or most amount of upvotes, and there's also a search bar that will dynamically change the display to include only recommendations that contain the search box input. After creating an account or logging in with an existiing account, both either through email+password or Google ID, users can post their own recommendations, including the title of the album or tracks, a quick blurb about the album and why they like it, and an image URL of the album. Logged in users can also leave comments on existing posts, edit posts that belong to them, and also delete posts that belong to them.
 
-Time spent: **8** hours spent in total
+Time spent: **12** hours spent in total
 
 ## CodePath Required Features
 
