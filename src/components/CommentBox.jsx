@@ -1,7 +1,10 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { supabase } from '../client';
 const CommentBox = (props) => {
     const [comment, setComment] = useState({ content: "", post_id: props.post_id })
+    const navigate = useNavigate()
+
     const handleChange = (event) => {
         const { name, value } = event.target
         setComment((prev) => {
@@ -29,7 +32,7 @@ const CommentBox = (props) => {
             return
         }
 
-        window.location = '/view/' + comment.post_id
+        navigate('/view/' + comment.post_id)
     }
     console.log(comment.post_id)
 
