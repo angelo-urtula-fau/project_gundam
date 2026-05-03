@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import {supabase} from '../client'
-import {Link} from 'react-router'
+import {Link} from 'react-router-dom'
 
 const PostCard = (props) => {
     return(
