@@ -4,6 +4,7 @@ import PostCard from '../components/PostCard'
 import CreatePostForm from '../components/CreatePostForm'
 import { Link } from 'react-router-dom'
 import { useAuth } from "../context/AuthContext"
+import { format } from 'date-fns';
 
 const Home = () => {
     const { user, loading } = useAuth()
@@ -59,7 +60,7 @@ const Home = () => {
                             <PostCard
                                 id={post.id}
                                 title={post.title}
-                                time={post.created_at}
+                                time={format(new Date(post.created_at), 'MM/dd/yyyy hh:mm:ss:a')}
                                 upvotes={post.upvotes}
 
                             /></Link>
