@@ -24,7 +24,7 @@ const SignUp = () => {
     return (
         <div>
             <h1>Sign Up</h1>
-            <form onSubmit={handleSignUp}>
+            <form onSubmit={handleSignUp} className="signup-form">
                 <label htmlFor="email">Email</label>
                 <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <label htmlFor="password">Password</label>
