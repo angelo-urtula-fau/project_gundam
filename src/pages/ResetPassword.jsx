@@ -5,31 +5,47 @@ import { useNavigate } from "react-router-dom"
 
 const ResetPassword = () => {
     const [email, setEmail] = useState("")
-    const navigate = useNavigate()
+    const [message, setMessage] = useState("")
+    const [error, setError] = useState("")
 
-    const handleResetPassword = async (e) => {
+    const handleReset = async (e) => {
         e.preventDefault()
-        const { error } = await supabase.auth.resetPassword({
-            email
+        setMessage("")
+        setError("")
+
+        const { error } = await supabase.auth.resetPasswordForEmail(email, {
+            redirectTo: window.location.origin + "/update-password"
         })
+
         if (error) {
-            console.error("Error resetting password:", error)
-        } else {
-            console.log("Password reset email sent")
-            navigate("/login")
+            setError(error.message)
+            return
         }
+
+        setMessage("Password reset email sent. Check your inbox.")
     }
 
     return (
-        <div>
-            <h1>Reset Password</h1>
-            <form onSubmit={handleResetPassword} className="signup-form">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <button type="submit">Reset Password</button>
+        <div className="auth-container">
+            <h2>Reset Password</h2>
+
+            <form onSubmit={handleReset}>
+                <input
+                    type="email"
+                    placeholder="Enter your account email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+
+                {error && <p className="error">{error}</p>}
+                {message && <p className="success">{message}</p>}
+
+                <button type="submit">Send Reset Email</button>
             </form>
         </div>
     )
+
 }
 
 export default ResetPassword
