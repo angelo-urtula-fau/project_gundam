@@ -88,7 +88,7 @@ GIF created with ...
   -  Have LLM provide an overall summary of Post.  Need to provide title, description, posts, upvotes, comments. Display LLM summary in a nice way on the UI.
 
 ## Vercel App Link
-[text](https://final-project-peach-eight.vercel.app/)
+[Neon Jazzscape - Hosted on Vercel](https://final-project-peach-eight.vercel.app/)
 
 
 ## FAU Video Walkthrough
