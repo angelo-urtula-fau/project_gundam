@@ -45,6 +45,7 @@ function App() {
             <h2>Neon Jazzscapes</h2>
           </div>
           <div className="navbar">
+            <Link to="/"><button>Home</button></Link>
             {user? (<button onClick={handleLogout}>Logout</button>):(<Link to="/login"><button>Login</button></Link>)}
           </div>
       </div>
