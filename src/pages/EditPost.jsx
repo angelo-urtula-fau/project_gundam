@@ -50,7 +50,7 @@ const EditPost = ({ data }) => {
                         <input type="text" id="title" name="title" value={post.title} onChange={handleChange} /><br />
                         <br />
                         <label htmlFor="title">Content</label> <br />
-                        <input type="text" id="content" name="content" value={post.content} onChange={handleChange} /><br />
+                        <textarea rows={10} cols={50} id="content" name="content" value={post.content} onChange={handleChange} /><br />
                         <br />
                         <label htmlFor="title">Image URL</label> <br />
                         <input type="text" id="image_url" name="image_url" value={post.image_url} onChange={handleChange} /><br />
