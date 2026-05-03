@@ -17,7 +17,7 @@ const SignUp = () => {
             console.error("Error signing up:", error)
         } else {
             console.log("User signed up:", data)
-            navigate("/login")
+            navigate("/")
         }
     }
 
