@@ -40,26 +40,28 @@ const EditPost = ({ data }) => {
             }
         })
     }
-
-    {postdata.user_id === user?.id ? (
+    return (
         <div>
-            <form>
-                <h1>Edit Your Post</h1>
-                <label htmlFor="title">Title</label> <br />
-                <input type="text" id="title" name="title" value={post.title} onChange={handleChange} /><br />
-                <br />
-                <label htmlFor="title">Content</label> <br />
-                <input type="text" id="content" name="content" value={post.content} onChange={handleChange} /><br />
-                <br />
-                <label htmlFor="title">Image URL</label> <br />
-                <input type="text" id="image_url" name="image_url" value={post.image_url} onChange={handleChange} /><br />
-                <br />
-                <input type="submit" value="Submit" onClick={updatePost} />
-                <button className="deleteButton" onClick={deletePost}>Delete</button>
-            </form>
-        </div>
-    ) : (<p>You are not the owner of this post.</p>)
+            {postdata.user_id === user?.id ? (
+                <div>
+                    <form>
+                        <h1>Edit Your Post</h1>
+                        <label htmlFor="title">Title</label> <br />
+                        <input type="text" id="title" name="title" value={post.title} onChange={handleChange} /><br />
+                        <br />
+                        <label htmlFor="title">Content</label> <br />
+                        <input type="text" id="content" name="content" value={post.content} onChange={handleChange} /><br />
+                        <br />
+                        <label htmlFor="title">Image URL</label> <br />
+                        <input type="text" id="image_url" name="image_url" value={post.image_url} onChange={handleChange} /><br />
+                        <br />
+                        <input type="submit" value="Submit" onClick={updatePost} />
+                        <button className="deleteButton" onClick={deletePost}>Delete</button>
+                    </form>
+                </div>
+            ) : (<p>You are not the owner of this post.</p>)
 
-}}
-
+            }</div>
+    )
+}
 export default EditPost
