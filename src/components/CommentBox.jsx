@@ -13,24 +13,33 @@ const CommentBox = (props) => {
     }
 
     const createComment = async (event) => {
-        await supabase
+        event.preventDefault()
+        if (!comment.content.trim()) return
+
+        const { data, error } = await supabase
             .from('comments')
             .insert({
                 content: comment.content,
                 post_id: comment.post_id
             })
-            .select();
-        window.location = '/view/' + comment.post_id;
+            .select()
+
+        if (error) {
+            console.error('Comment insert error:', error)
+            return
+        }
+
+        window.location = '/view/' + comment.post_id
     }
     console.log(comment.post_id)
 
     return (
         <div>
-            <form>
+            <form onSubmit={createComment}>
                 <label htmlFor="content">Leave a comment..</label> <br />
                 <input type="text" id="content" name="content" value={comment.content} onChange={handleChange} /><br />
                 <br />
-                <input type="submit" value="Submit" onClick={createComment} />
+                <input type="submit" value="Submit" />
             </form>
         </div>
     )
