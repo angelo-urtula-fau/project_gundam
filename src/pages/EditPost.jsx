@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { useParams, useLocation } from "react-router-dom"
 import { supabase } from '../client';
+import { useAuth } from '../context/AuthContext';
 
 const EditPost = ({ data }) => {
+    const { user } = useAuth()
     const { id } = useParams()
     const location = useLocation()
     const postdata = location.state
@@ -39,7 +41,7 @@ const EditPost = ({ data }) => {
         })
     }
 
-    return (
+    {postdata.user_id === user?.id ? (
         <div>
             <form>
                 <h1>Edit Your Post</h1>
@@ -56,8 +58,8 @@ const EditPost = ({ data }) => {
                 <button className="deleteButton" onClick={deletePost}>Delete</button>
             </form>
         </div>
-    )
+    ) : (<p>You are not the owner of this post.</p>)
 
-}
+}}
 
 export default EditPost
