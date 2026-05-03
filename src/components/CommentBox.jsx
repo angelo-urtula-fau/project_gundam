@@ -35,8 +35,10 @@ const CommentBox = (props) => {
         // Clear the comment input
         setComment({ content: "", post_id: props.post_id })
 
-        // Navigate with a timestamp to force component remount
-        navigate('/view/' + comment.post_id + '?t=' + Date.now())
+        // Call the callback to refresh comments
+        if (props.onCommentAdded) {
+            props.onCommentAdded()
+        }
     }
     console.log(comment.post_id)
 

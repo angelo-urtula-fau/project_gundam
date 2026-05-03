@@ -61,6 +61,7 @@ const PostPage = () => {
             }
             {user ? (<CommentBox
                 post_id={id}
+                onCommentAdded={fetchComments}
             />) : (null)}
         </div>
     )
