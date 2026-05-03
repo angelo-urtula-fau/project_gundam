@@ -28,9 +28,9 @@ const CreatePostForm = () => {
         <div className="create-post-form">
              <h2 className="create-post-header">Create a Post</h2>
 
-            <form>
+            <form onSubmit={createPost}>
                 <label htmlFor="title">Title</label> <br />
-                <input type="text" id="title" name="title" onChange={handleChange} /><br />
+                <input type="text" required id="title" name="title" onChange={handleChange} /><br />
                 <br />
                 <label htmlFor="content">content</label><br />
                 <textarea rows="5" cols="50" id="content" name="content" onChange={handleChange}></textarea>
@@ -39,7 +39,7 @@ const CreatePostForm = () => {
                 <input type="text" id="image)_url" name="image_url" onChange={handleChange} />
 
                 <br />
-                <input type="submit" value="Submit" onClick={createPost} />
+                <button type="submit">Create Post</button>
             </form>
         </div>
     )
