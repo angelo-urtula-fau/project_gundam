@@ -39,12 +39,17 @@ function App() {
   }
 
   return (
-    <>
-
-      {user ? <h1>hello {user.email}</h1> : <h1>NO LOGIN</h1>}
-      {user ? <button onClick={handleLogout}>Log out</button> : <p></p>}
+    <div>
+      <div className="header">
+          <div className="site-name">
+            <h2>Neon Jazzscapes</h2>
+          </div>
+          <div className="navbar">
+            {user? (<button onClick={handleLogout}>Logout</button>):(<Link to="/login"><button>Login</button></Link>)}
+          </div>
+      </div>
       {element}
-    </>
+    </div>
   )
 }
 
