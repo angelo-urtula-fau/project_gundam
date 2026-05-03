@@ -25,7 +25,9 @@ const CreatePostForm = () => {
     }
 
     return (
-        <div>
+        <div className="create-post-form">
+             <h2 className="create-post-header">Create a Post</h2>
+
             <form>
                 <label htmlFor="title">Title</label> <br />
                 <input type="text" id="title" name="title" onChange={handleChange} /><br />

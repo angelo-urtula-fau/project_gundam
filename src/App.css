@@ -208,3 +208,109 @@
 .PostCard:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+
+.Home {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.search-bar:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 4px rgba(108, 99, 255, 0.4);
+}
+
+.sorter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.sorter select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.create-post-form {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  max-width: 650px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.create-post-header {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.create-post-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.create-post-form label {
+  font-weight: 600;
+}
+
+.create-post-form input,
+.create-post-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+  transition: 0.2s ease;
+}
+
+.create-post-form input:focus,
+.create-post-form textarea:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 4px rgba(108, 99, 255, 0.4);
+}
+
+.create-post-form input[type="submit"] {
+  background: #6c63ff;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.create-post-form input[type="submit"]:hover {
+  background: #5a52e0;
+  transform: translateY(-2px);
+}
+
+.create-post-form input[type="submit"]:active {
+  transform: translateY(0);
+}
