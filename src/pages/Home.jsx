@@ -2,26 +2,28 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../client'
 import PostCard from '../components/PostCard'
 
-const Home = (props) => {
+const Home = () => {
     const [posts, setPosts] = useState([])
 
     const fetchPosts = async () => {
-        const { data } = await supabase
+        const { data,error } = await supabase
             .from("posts")
-            .select()
+            .select("*")
+            console.log(error)
         setPosts(data)
     }
 
     useEffect(() => {
         fetchPosts()
-    }, [props])
+    }, [])
+
 
     return (
         <div className="Home">
-            {posts && posts.length > 0 ?
+            {posts && posts.length > 0 ? (
                 [...posts]
-                    .sort((a, b) => b.id - a.id)
-                    .map((post, index) =>
+                    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+                    .map((post) => (
                         <PostCard
                             key={post.id}
                             id={post.id}
@@ -30,7 +32,7 @@ const Home = (props) => {
                             upvotes={post.upvotes}
 
                         />
-                    ) : <h2>{'No posts yet'}</h2>
+                    ))) : (<h2>'No posts yet'</h2>)
             }
         </div>
     )
