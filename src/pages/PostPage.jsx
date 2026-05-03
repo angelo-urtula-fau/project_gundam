@@ -16,6 +16,16 @@ const PostPage = () => {
         setPost(data)
     }
 
+    const updateUpvotes = async (event) => {
+        event.preventDefault();
+
+        await supabase
+            .from("posts")
+            .update({ upvotes: post.upvotes + 1})
+            .eq("id", id)
+            fetchPost()
+    }
+
     useEffect(() => {
         fetchPost()
     }, [])
@@ -25,6 +35,7 @@ const PostPage = () => {
             <h1>Title: {post.title}</h1>
             <h3>Content: {post.content}</h3>
             <h3>Image_url: {post.image_url}</h3>
+            <button onClick={updateUpvotes}>{post.upvotes} Likes 👍</button>
             <Link to={'/edit/' + post.id} state={{ title: post.title, content: post.content, image_url: post.image_url }}>Edit Your Post</Link>
         </div>
     )
