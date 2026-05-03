@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../client'
 import PostCard from '../components/PostCard'
+import CreatePostForm from '../components/CreatePostForm'
 
 const Home = () => {
     const [posts, setPosts] = useState([])
+    const [sortBy, setSortBy] = useState("time")
 
     const fetchPosts = async () => {
-        const { data,error } = await supabase
+        const { data, error } = await supabase
             .from("posts")
             .select("*")
-            console.log(error)
+        console.log(error)
         setPosts(data)
     }
 
@@ -20,9 +22,19 @@ const Home = () => {
 
     return (
         <div className="Home">
+            <CreatePostForm />
+            <button onClick={() => setSortBy(sortBy === "time" ? "upvotes" : "time")}>
+                Sort by: {sortBy === "time" ? "Upvotes" : "Newest"}
+            </button>
             {posts && posts.length > 0 ? (
                 [...posts]
-                    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+                    .sort((a, b) => {
+                        if (sortBy === "time") {
+                            return new Date(b.created_at) - new Date(a.created_at)
+                        }
+                        return b.upvotes - a.upvotes
+                    })
+
                     .map((post) => (
                         <PostCard
                             key={post.id}
