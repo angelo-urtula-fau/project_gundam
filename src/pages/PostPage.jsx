@@ -49,7 +49,7 @@ const PostPage = () => {
             <h3>Content: {post.content}</h3>
             <h3>Image_url: {post.image_url}</h3>
             <button onClick={updateUpvotes}>{post.upvotes} Likes 👍</button>
-            {user?.id === post.user_id ? (<Link to={'/edit/' + post.id} state={{ title: post.title, content: post.content, image_url: post.image_url, user_id: post.user_id }}>Edit Your Post</Link>) : (null)}
+            {user?.id === post.user_id ? (<Link to={'/edit/' + post.id} state={{ title: post.title, content: post.content, image_url: post.image_url, user_id: post.user_id }}><button>Edit Your Post</button></Link>) : (null)}
             {comments && comments.length > 0 ? (
                 [...comments]
                     .sort((a, b) => {
