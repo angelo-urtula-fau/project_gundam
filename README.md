@@ -2,7 +2,7 @@
 
 Submitted by: Angelo Urtula
 
-This web app: **insert description**
+This web app: Neon Jazzscapes is a place where fellow enjoyers of chill music, jazz, and all of jazz's iterations can come together and share albums or tracks that they want others to check out. Without signing in, users can check out the collection of recommendations that have already been posted on the app by those with an account. All users can upvote recommendations as much as they would like, as well. The list of recommendations can be sorted by most recent created or most amount of upvotes, and there's also a search bar that will dynamically change the display to include only recommendations that contain the search box input. After creating an account or logging in with an existiing account, both either through email+password or Google ID, users can post their own recommendations, including the title of the album or tracks, a quick blurb about the album and why they like it, and an image URL of the album. Logged in users can also leave comments on existing posts, edit posts that belong to them, and also delete posts that belong to them.
 
 Time spent: **8** hours spent in total
 
@@ -99,7 +99,7 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Being the largest undertaking we've taken so far, the CSS rules required a good amount of assistance in order to make the site look presentable. Aside from that, most of the forms and routes were easy to set up with all the practice we've had over the semester. The largest hurdle to cross was correctly setting up the Supabase backend, especially with the authentication functionality. Deploying this project on Vercel was also somewhat of a struggle. I ended up running into bugs that I didn't have in a local environment, which required a lot of research to bug fix.
 
 ## License
 
