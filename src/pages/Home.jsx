@@ -3,8 +3,10 @@ import { supabase } from '../client'
 import PostCard from '../components/PostCard'
 import CreatePostForm from '../components/CreatePostForm'
 import { Link } from 'react-router-dom'
+import { useAuth } from "../context/AuthContext"
 
 const Home = () => {
+    const { user, loading } = useAuth()
     const [posts, setPosts] = useState([])
     const [sortBy, setSortBy] = useState("time")
     const [searching, setSearching] = useState("")
@@ -24,6 +26,7 @@ const Home = () => {
 
     return (
         <div className="Home">
+            {user ? (<CreatePostForm />) : (null)}
             <input
                 type="text"
                 placeholder="Search 🔍..."
@@ -31,12 +34,14 @@ const Home = () => {
                 onChange={(e) => setSearching(e.target.value)}
                 className="search-bar"
             />
-
+            <div className="sorter">
+                <p>Sort by:</p>
             <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
                 <option value="time">Newest</option>
                 <option value="upvotes">Most Upvoted</option>
             </select>
-            <CreatePostForm />
+            </div>
+
 
             {posts && posts.length > 0 ? (
                 [...posts]
