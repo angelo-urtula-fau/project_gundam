@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { useRoutes } from 'react-router';
-import { Link } from 'react-router'
+import { useRoutes } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import Home from './pages/Home'
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
   return (
     <>
       <h1>Test</h1>
+      {element}
     </>
   )
 }
