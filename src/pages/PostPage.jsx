@@ -41,7 +41,7 @@ const PostPage = () => {
     useEffect(() => {
         fetchPost()
         fetchComments()
-    }, [])
+    }, [id])
 
     return (
         <div className="view-post">

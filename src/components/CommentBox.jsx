@@ -32,7 +32,11 @@ const CommentBox = (props) => {
             return
         }
 
-        navigate('/view/' + comment.post_id)
+        // Clear the comment input
+        setComment({ content: "", post_id: props.post_id })
+
+        // Navigate with a timestamp to force component remount
+        navigate('/view/' + comment.post_id + '?t=' + Date.now())
     }
     console.log(comment.post_id)
 
