@@ -4,6 +4,7 @@ import { useRoutes } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import PostPage from "./pages/PostPage"
 import { useAuth } from "./context/AuthContext"
 import {useNavigate} from "react-router-dom"
 import {supabase} from "./client"
@@ -20,6 +21,10 @@ function App() {
     {
       path: "/login",
       element: <Login/>
+    },
+    {
+      path: "/view/:id",
+      element: <PostPage/>
     }
   ]);
   const navigate =useNavigate()
