@@ -57,7 +57,7 @@ function App() {
     <div>
       <div className="header">
           <div className="site-name">
-            <h2>Neon Jazzscapes</h2>
+            <h2>Gunpla Hub</h2>
           </div>
           <div className="navbar">
             {user? (<p>Welcome, {user.email}!</p>): null}
