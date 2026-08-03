@@ -1,18 +1,18 @@
 :root {
-  --bg: #09060f;
-  --bg-alt: #120d1f;
-  --surface: rgba(18, 12, 35, 0.88);
-  --surface-strong: rgba(25, 16, 50, 0.96);
-  --text: #e7e3ff;
-  --text-muted: #bdb5ff;
-  --heading: #f4f1ff;
-  --accent: #8d6bff;
-  --accent2: #29d9ff;
-  --accent3: #ff4dff;
-  --border: rgba(151, 97, 255, 0.18);
+  --bg: #080e1c;
+  --bg-alt: #0c1428;
+  --surface: rgba(10, 18, 36, 0.88);
+  --surface-strong: rgba(12, 22, 44, 0.96);
+  --text: #e8edf5;
+  --text-muted: #8fa8c8;
+  --heading: #ffffff;
+  --accent: #cc2020;
+  --accent2: #e8c020;
+  --accent3: #5a8ab0;
+  --border: rgba(200, 220, 255, 0.12);
   --radius: 24px;
-  --shadow: 0 24px 80px rgba(9, 6, 24, 0.45);
-  --glow: 0 0 30px rgba(141, 107, 255, 0.18);
+  --shadow: 0 24px 80px rgba(5, 8, 20, 0.55);
+  --glow: 0 0 30px rgba(204, 32, 32, 0.15);
   --sans: Inter, system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
 }
@@ -28,7 +28,7 @@ body {
 }
 
 body {
-  background: linear-gradient(180deg, #07040e 0%, #0f091d 55%, #07040e 100%);
+  background: linear-gradient(180deg, #060b17 0%, #0a1223 55%, #060b17 100%);
   color: var(--text);
   font-family: var(--sans);
   font-size: 16px;
@@ -42,16 +42,16 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.08), transparent 20%),
-    radial-gradient(circle at 80% 12%, rgba(41, 217, 255, 0.14), transparent 18%),
-    radial-gradient(circle at 50% 85%, rgba(255, 77, 255, 0.12), transparent 17%);
+    radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.05), transparent 20%),
+    radial-gradient(circle at 80% 12%, rgba(232, 192, 32, 0.12), transparent 18%),
+    radial-gradient(circle at 50% 85%, rgba(204, 32, 32, 0.10), transparent 17%);
   pointer-events: none;
   opacity: 0.9;
   z-index: -1;
 }
 
 ::selection {
-  background: rgba(141, 107, 255, 0.35);
+  background: rgba(204, 32, 32, 0.35);
   color: #fff;
 }
 
@@ -106,20 +106,20 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: rgba(141, 107, 255, 0.65);
-  box-shadow: 0 0 24px rgba(141, 107, 255, 0.18);
+  border-color: rgba(204, 32, 32, 0.65);
+  box-shadow: 0 0 24px rgba(204, 32, 32, 0.18);
   transform: translateY(-1px);
 }
 
 button,
 .button,
 input[type="submit"] {
-  border: 1px solid rgba(141, 107, 255, 0.35);
+  border: 1px solid rgba(204, 32, 32, 0.35);
   border-radius: 999px;
   padding: 0.95rem 1.4rem;
-  background: rgba(141, 107, 255, 0.12);
+  background: rgba(204, 32, 32, 0.12);
   color: var(--text);
-  box-shadow: 0 0 18px rgba(141, 107, 255, 0.12);
+  box-shadow: 0 0 18px rgba(204, 32, 32, 0.12);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
@@ -127,8 +127,8 @@ button:hover,
 .button:hover,
 input[type="submit"]:hover {
   transform: translateY(-1px);
-  background: rgba(141, 107, 255, 0.25);
-  box-shadow: 0 0 24px rgba(141, 107, 255, 0.22);
+  background: rgba(204, 32, 32, 0.25);
+  box-shadow: 0 0 24px rgba(204, 32, 32, 0.22);
 }
 
 button:active,
@@ -138,7 +138,7 @@ input[type="submit"]:active {
 }
 
 .error {
-  color: #ff7eeb;
+  color: #ff7070;
   margin-top: 0.35rem;
 }
 
@@ -161,7 +161,7 @@ input[type="submit"]:active {
   margin: 40px auto;
   padding: 32px 28px;
   border-radius: 28px;
-  background: rgba(10, 8, 23, 0.92);
+  background: rgba(8, 14, 28, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(16px);
@@ -171,7 +171,7 @@ input[type="submit"]:active {
   margin-bottom: 1.5rem;
   font-size: 2rem;
   letter-spacing: 0.03em;
-  text-shadow: 0 0 22px rgba(141, 107, 255, 0.35);
+  text-shadow: 0 0 22px rgba(204, 32, 32, 0.35);
 }
 
 .auth-container form {
@@ -189,8 +189,8 @@ input[type="submit"]:active {
 .auth-container button.google-btn {
   width: 100%;
   margin-top: 0.5rem;
-  border: 1px solid rgba(41, 217, 255, 0.45);
-  background: linear-gradient(135deg, rgba(41, 217, 255, 0.14), rgba(141, 107, 255, 0.12));
+  border: 1px solid rgba(232, 192, 32, 0.45);
+  background: linear-gradient(135deg, rgba(232, 192, 32, 0.14), rgba(204, 32, 32, 0.12));
   color: #fff;
 }
 
