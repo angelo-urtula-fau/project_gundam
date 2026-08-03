@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import PostPage from "./pages/PostPage"
 import EditPost from "./pages/EditPost"
-import SignUp from './pages/SignUp'
+import SignUp from './pages/Signup'
 import ResetPassword from './pages/ResetPassword';
 import UpdatePassword from './pages/UpdatePassword';
 import { useAuth } from "./context/AuthContext"
