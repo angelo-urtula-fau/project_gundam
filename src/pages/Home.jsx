@@ -45,7 +45,7 @@ const Home = () => {
             {posts && posts.length > 0 ? (
                 [...posts]
                     .filter((post) =>
-                        post.gunpla_name.toLowerCase().includes(searching.toLowerCase()))
+                        (post.gunpla_name ?? '').toLowerCase().includes(searching.toLowerCase()))
                     .sort((a, b) => {
                         if (sortBy === "time") {
                             return new Date(b.created_at) - new Date(a.created_at)
